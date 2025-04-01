@@ -1,15 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { Poppins, Itim, Yatra_One, Radley } from "next/font/google";
+
+import "./globals.css";
+import Navbar from "./components/Navbar";
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-poppins",
+});
+const radley = Radley({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-radley",
+});
+const itim = Itim({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-itim",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const yatraOne = Yatra_One({
+  weight: ["400"],
   subsets: ["latin"],
+  variable: "--font-yatra-one",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +38,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          
+          ${poppins.variable}
+          ${yatraOne.variable}
+          ${itim.variable}
+          ${radley.variable}
+          font-poppins
+          antialiased inset-0 overflow-x-hidden
+          
+        `}
       >
+        <div className=" top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(255,0,0,0.13)_0,rgba(255,0,0,0)_50%,rgba(255,0,0,0)_100%)] fixed"></div>
+        <Navbar />
         {children}
       </body>
     </html>
