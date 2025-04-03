@@ -12,14 +12,14 @@ const Contact = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="flex flex-col items-center justify-center space-y-8 py-20"
+      className="flex flex-col space-y-8 py-20 mx-auto"
     >
       <SectionTitle
         badge="CONTACT"
         title="Let’s Build Something Great Together"
       />
-      <div className="flex flex-col max-lg:items-center lg:flex-row space-x-12 px-4">
-        <div className="space-y-4">
+      <div className="flex flex-col justify-center max-lg:items-center lg:flex-row space-x-12 px-4">
+        <div className="space-y-4 mx-4">
           <article className="bg-revline-black-50 p-8 rounded-lg h-fit space-y-4">
             <h2 className="text-3xl font-bold text-revline-black-700 ">
               Get In Touch

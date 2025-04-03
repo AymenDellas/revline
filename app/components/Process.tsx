@@ -7,6 +7,7 @@ import { processSteps } from "@/lib/data";
 const Process = () => {
   return (
     <motion.section
+      id="process"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
@@ -17,7 +18,6 @@ const Process = () => {
         {processSteps.map((step, index) => {
           return (
             <motion.div
-              id="process"
               key={index}
               transition={{
                 duration: 0.5,

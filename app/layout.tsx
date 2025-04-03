@@ -4,6 +4,7 @@ import { Poppins, Itim, Yatra_One, Radley } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -54,6 +55,7 @@ export default function RootLayout({
         <div className=" top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(255,0,0,0.13)_0,rgba(255,0,0,0)_50%,rgba(255,0,0,0)_100%)] fixed"></div>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
