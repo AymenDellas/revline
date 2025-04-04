@@ -40,7 +40,7 @@ const Services = () => {
                 delay: index * 0.2,
               }}
               initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               className=" group border border-revline-200 w-fit bg-white  flex flex-col space-y-4 rounded-lg p-4  hover:-translate-y-2 transition-all duration-300 ease-out relative overflow-hidden hover:shadow-2xl shadow-revline-900/30"
             >
               <span
@@ -54,7 +54,7 @@ const Services = () => {
               </div>
               <p className="text-revline-300 text-lg">{service.description}</p>
               <Link
-                href={`/${service.link}`}
+                href={`${service.link}`}
                 className="mt-auto flex items-center space-x-2 w-fit  text-revline-900 group- hover:text-revline-400 transition-colors duration-300 ease-out relative"
               >
                 {service.cta}

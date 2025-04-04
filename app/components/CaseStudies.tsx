@@ -59,9 +59,14 @@ const ProjectShowcase = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white/30 backdrop-blur-3xl border border-revline-200 rounded-[2rem] p-8 shadow-xl"
         >
           {/* Project Visualization */}
-          <div className="rounded-xl overflow-hidden bg-revline-100 h-[400px] flex items-center justify-center relative">
-            <img src={activeProject.image} alt="" />
-          </div>
+          <div
+            style={{
+              backgroundImage: `url(${activeProject.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="rounded-xl overflow-hidden bg-revline-100 h-[400px] flex items-center justify-center relative"
+          ></div>
 
           {/* Project Details */}
           <div className="flex flex-col space-y-6">
@@ -124,7 +129,7 @@ const ProjectShowcase = () => {
             onClick={() => setActiveProject(project)}
           >
             <div
-              className={`h-40 flex items-center justify-center relative ${project.color} bg-opacity-30`}
+              className={`h-40 flex items-center justify-center relative ${project.color} bg-opacity-30 `}
               style={{
                 backgroundImage: `url(${project.image})`,
                 backgroundSize: "cover",
