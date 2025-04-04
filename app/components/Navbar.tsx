@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Phone, ScrollText } from "lucide-react";
+import { ArrowRight, Phone, ScrollText } from "lucide-react";
 import Link from "next/link";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +18,6 @@ const Navbar = () => {
           </Link>
 
           <ul className="flex space-x-6 ">
-            <a href="/#case-studies" className="relative group">
-              <p className="z-10 group-hover:translate-x-0.5 transition-all duration-300 ease-out group-hover:text-revline-400">
-                Case Studies
-              </p>
-              <span className="absolute w-[5px] h-[5px] bg-revline-400 rounded-full top-1/2 -translate-y-1/2 -left-0 opacity-0  group-hover:-left-2 group-hover:opacity-100 transition-all duration-200 ease-out -z-10"></span>
-            </a>
             <Link href="/agency" className="relative group">
               <p className="z-10 group-hover:translate-x-0.5 transition-all duration-300 ease-out group-hover:text-revline-400">
                 Agency
@@ -51,18 +45,18 @@ const Navbar = () => {
           </ul>
           <ul className="flex items-center space-x-4 text-revline-white">
             <Link
-              href="/proposal"
+              href="/#case-studies"
               className="flex items-center space-x-1 hover:text-revline-400 transition-colors duration-300 ease-out"
             >
               <ScrollText size={16} />
-              <li>Get proposal</li>
+              <li>Our Work</li>
             </Link>
             <Link
               href="/contact"
               className="flex items-center space-x-1 p-2 rounded-lg bg-revline-400 hover:bg-revline-300 active:bg-revline-400 text-revline-white-50 transition-colors duration-200 ease-out"
             >
-              <Phone size={16} />
-              <li>Schedule a call</li>
+              <ArrowRight size={16} />
+              <li>Start Your Project</li>
             </Link>
           </ul>
         </div>
@@ -105,12 +99,13 @@ const Navbar = () => {
           </div>
         </div>
         <div
+          onClick={() => setIsOpen(!isOpen)}
           className={`${
             isOpen ? "h-screen" : "h-0"
           } absolute inset-0 bg-revline-black-800 transition-all duration-500 ease-out text-revline-white-500 overflow-hidden z-50 overflow-y-hidden`}
         >
           <ul className="flex flex-col space-y-6 mx-8 my-32 text-4xl w-full underline underline-offset-8">
-            <Link href="/case_studies" className="relative group ">
+            <Link href="/#case-studies" className="relative group ">
               <p className="z-10 group-hover:translate-x-2 transition-all duration-300 ease-out group-hover:text-revline-400">
                 Case Studies
               </p>
@@ -125,12 +120,12 @@ const Navbar = () => {
                 Contact
               </p>
             </Link>
-            <Link href="/services" className="relative group">
+            <Link href="/#services" className="relative group">
               <p className="z-10 group-hover:translate-x-2 transition-all duration-300 ease-out group-hover:text-revline-400">
                 Services
               </p>
             </Link>
-            <Link href="/process" className="relative group">
+            <Link href="/agency/#process" className="relative group">
               <p className="z-10 group-hover:translate-x-2 transition-all duration-300 ease-out group-hover:text-revline-400">
                 Process
               </p>
@@ -138,18 +133,18 @@ const Navbar = () => {
           </ul>
           <ul className="flex flex-col space-y-6 mx-8 mt-32 text-3xl">
             <Link
-              href="/proposal"
-              className="flex items-center space-x-2 justify-center hover:text-revline-400 transition-colors duration-300 ease-out"
+              href="/#case-studies"
+              className="flex items-center space-x-1 hover:text-revline-400 transition-colors duration-300 ease-out"
             >
-              <ScrollText size={30} />
-              <li>Get proposal</li>
+              <ScrollText size={16} />
+              <li>Our Work</li>
             </Link>
             <Link
               href="/contact"
-              className="flex items-center space-x-2 p-2 justify-center rounded-lg bg-revline-400 hover:bg-revline-300 active:bg-revline-400 text-revline-white-50 transition-colors duration-200 ease-out"
+              className="flex items-center space-x-1 p-2 rounded-lg bg-revline-400 hover:bg-revline-300 active:bg-revline-400 text-revline-white-50 transition-colors duration-200 ease-out"
             >
-              <Phone size={30} />
-              <li>Schedule a call</li>
+              <ArrowRight size={16} />
+              <li>Start Your Project</li>
             </Link>
           </ul>
         </div>

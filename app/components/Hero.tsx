@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { CodeXml, Monitor, Component } from "lucide-react";
+import { CodeXml, Monitor, Component, Send } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -68,12 +69,22 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex items-center space-x-2">
-          <button className="px-6 py-4 rounded-lg bg-revline-400 hover:bg-revline-300 transition-colors duration-300 ease-out text-white cursor-pointer">
-            Get Proposal
-          </button>
-          <button className="px-6 py-4 rounded-lg border border-revline-400  hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800 cursor-pointer">
-            Schedule a call
-          </button>
+          <Link
+            href="/contact"
+            className="flex items-center space-x-2 px-6 py-4 rounded-lg bg-revline-400 hover:bg-revline-300 transition-colors duration-300 ease-out text-white cursor-pointer group"
+          >
+            <p>Get Started Today</p>
+            <Send
+              size={18}
+              className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 ease-out"
+            />
+          </Link>
+          <Link
+            href="/#case_studies"
+            className="px-6 py-4 rounded-lg border border-revline-400  hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800 cursor-pointer"
+          >
+            View Our Work
+          </Link>
         </div>
       </div>
     </motion.section>

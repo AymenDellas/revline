@@ -1,79 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Code2, Database, Rocket, Globe } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-
+import { projectShowcases } from "@/lib/data";
 // Hypothetical project showcase data - purely demonstrative of capabilities
-const projectShowcases = [
-  {
-    id: 1,
-    title: "Modern Photography Portfolio",
-    category: "Portfolio",
-    description:
-      "A responsive portfolio website concept designed to showcase photography with a clean, minimalist aesthetic and optimal image loading.",
-    technologies:
-      "Next.js, TailwindCSS, responsive image optimization, lazy loading",
-    features: [
-      "Responsive image gallery",
-      "Dark/light mode toggle",
-      "Contact form integration",
-    ],
-    icon: Code2,
-    color: "bg-revline-200",
-    link: "/projects/photography-portfolio",
-  },
-  {
-    id: 2,
-    title: "E-commerce Ordering System",
-    category: "E-commerce",
-    description:
-      "A concept online ordering system for small businesses allowing customers to browse products and place orders for local pickup.",
-    technologies:
-      "React, custom cart system, local pickup scheduling functionality",
-    features: [
-      "Product catalog",
-      "Secure checkout flow",
-      "Order management dashboard",
-    ],
-    icon: Globe,
-    color: "bg-revline-300",
-    link: "/projects/ecommerce-concept",
-  },
-  {
-    id: 3,
-    title: "Resource Sharing Platform",
-    category: "Web App",
-    description:
-      "A demonstration platform for content creators to share and manage digital resources with categorization and search functionality.",
-    technologies: "Next.js, content management system, search API integration",
-    features: [
-      "Content organization system",
-      "User authentication",
-      "Advanced search filters",
-    ],
-    icon: Database,
-    color: "bg-revline-400",
-    link: "/projects/resource-platform",
-  },
-  {
-    id: 4,
-    title: "Fitness Studio Template",
-    category: "Website",
-    description:
-      "A modern website template for fitness businesses with class scheduling, trainer profiles, and membership information.",
-    technologies:
-      "Custom design system, responsive layouts, scheduling component",
-    features: [
-      "Class schedule interface",
-      "Responsive design",
-      "Instructor profiles",
-    ],
-    icon: Rocket,
-    color: "bg-revline-200",
-    link: "/projects/fitness-template",
-  },
-];
 
 const ProjectShowcase = () => {
   const [activeProject, setActiveProject] = useState(projectShowcases[0]);
@@ -129,16 +60,7 @@ const ProjectShowcase = () => {
         >
           {/* Project Visualization */}
           <div className="rounded-xl overflow-hidden bg-revline-100 h-[400px] flex items-center justify-center relative">
-            <div
-              className={`absolute inset-0 ${activeProject.color} opacity-20`}
-            ></div>
-            <activeProject.icon
-              size={120}
-              className="text-revline-900 opacity-30"
-            />
-            <div className="absolute top-4 left-4 bg-revline-900 text-white px-4 py-2 rounded-lg text-sm">
-              {activeProject.category}
-            </div>
+            <img src={activeProject.image} alt="" />
           </div>
 
           {/* Project Details */}
@@ -203,8 +125,12 @@ const ProjectShowcase = () => {
           >
             <div
               className={`h-40 flex items-center justify-center relative ${project.color} bg-opacity-30`}
+              style={{
+                backgroundImage: `url(${project.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <project.icon size={60} className="text-revline-900 opacity-50" />
               <div className="absolute top-3 left-3 bg-revline-900 text-white px-3 py-1 rounded-lg text-xs">
                 {project.category}
               </div>

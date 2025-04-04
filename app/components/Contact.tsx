@@ -18,7 +18,7 @@ const Contact = () => {
         badge="CONTACT"
         title="Let’s Build Something Great Together"
       />
-      <div className="flex flex-col justify-center max-lg:items-center lg:flex-row space-x-12 px-4">
+      <div className="flex flex-col justify-center max-lg:items-center lg:flex-row space-x-12 px-4 max-lg:w-full lg:w-[90%] xl:w-[75%] 2xl:w-[65%] mx-auto">
         <div className="space-y-4 mx-4">
           <article className="bg-revline-black-50 p-8 rounded-lg h-fit space-y-4">
             <h2 className="text-3xl font-bold text-revline-black-700 ">
@@ -101,10 +101,10 @@ const Contact = () => {
             <option value="" disabled selected>
               Select your budget range
             </option>
-            <option value="15000">&lt; 15,000 دج</option>
-            <option value="30000">15,000 - 30,000 دج</option>
-            <option value="50000">30,000 - 50,000 دج</option>
-            <option value="50000plus">&gt; 50,000 دج</option>
+            <option value="500">$500 - $1,000</option>
+            <option value="1000">$1,000 - $2,500</option>
+            <option value="2500">$2,500 - $5,000</option>
+            <option value="5000">$5,000+</option>
           </select>
 
           <label htmlFor="projectType" className="text-sm text-gray-700">

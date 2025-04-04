@@ -18,7 +18,7 @@ const Services = () => {
     <motion.section
       id="services"
       initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
       className="flex flex-col items-center justify-center space-y-8 py-20"
     >
