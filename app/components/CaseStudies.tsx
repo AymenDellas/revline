@@ -4,14 +4,13 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { projectShowcases } from "@/lib/data";
-// Hypothetical project showcase data - purely demonstrative of capabilities
 
 const ProjectShowcase = () => {
   const [activeProject, setActiveProject] = useState(projectShowcases[0]);
 
   return (
     <motion.section
-      id="case-studies"
+      id="case_studies"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}

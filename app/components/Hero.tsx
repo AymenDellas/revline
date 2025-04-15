@@ -69,7 +69,7 @@ const Hero = () => {
         <div className="flex items-center space-x-2">
           <Link
             href="/contact"
-            className="flex items-center space-x-2 px-6 py-4 rounded-lg bg-revline-400 hover:bg-revline-300 transition-colors duration-300 ease-out text-white cursor-pointer group"
+            className="flex items-center space-x-2 max-md:px-4 max-md:py-2 md:px-6 md:py-4 rounded-lg bg-revline-400 hover:bg-revline-300 transition-colors duration-300 ease-out text-white cursor-pointer group"
           >
             <p>Get Started Today</p>
             <Send
@@ -79,7 +79,7 @@ const Hero = () => {
           </Link>
           <Link
             href="/#case_studies"
-            className="px-6 py-4 rounded-lg border border-revline-400  hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800 cursor-pointer"
+            className="max-md:px-4 max-md:py-2 md:px-6 md:py-4 rounded-lg border border-revline-400  hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800 cursor-pointer"
           >
             View Our Work
           </Link>

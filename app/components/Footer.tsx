@@ -65,7 +65,8 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 mt-4">
             <Link
-              href="#"
+              target="_blank"
+              href="https://www.instagram.com/revlineagency/"
               className="hover:opacity-100 flex items-center space-x-1"
             >
               <Linkedin />
