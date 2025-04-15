@@ -4,9 +4,25 @@ import { motion } from "motion/react";
 import SectionTitle from "./SectionTitle";
 import { Check, Send, Phone, Mail, Loader, CheckCircle } from "lucide-react";
 import { faq, whyWorkWithUs } from "@/lib/data";
+type FormData = {
+  fullName: string;
+  companyName: string;
+  email: string;
+  budget: string;
+  projectType: string;
+  details: string;
+};
 
+type FormErrors = {
+  fullName?: string;
+  companyName?: string;
+  email?: string;
+  budget?: string;
+  projectType?: string;
+  details?: string;
+};
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     companyName: "",
     email: "",
@@ -15,13 +31,13 @@ const Contact = () => {
     details: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
   const validateForm = () => {
-    let newErrors = {};
+    let newErrors: FormErrors = {};
 
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required";
@@ -49,17 +65,21 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
     // Clear error for this field when user starts typing
-    if (errors[name]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors({ ...errors, [name]: "" });
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (!validateForm()) {
