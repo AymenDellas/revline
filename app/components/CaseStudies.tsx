@@ -113,58 +113,6 @@ const ProjectShowcase = () => {
         </motion.div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-[90%] 2xl:w-[65%]">
-        {projectShowcases.map((project, index) => (
-          <motion.div
-            key={project.id}
-            transition={{
-              duration: 0.5,
-              ease: "easeInOut",
-              delay: index * 0.1,
-            }}
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            className="border border-revline-200 bg-white/30 backdrop-blur-3xl rounded-[30px] overflow-hidden hover:-translate-y-2 transition-all duration-300 ease-out hover:shadow-xl shadow-revline-900/20 cursor-pointer"
-            onClick={() => setActiveProject(project)}
-          >
-            <div
-              className={`h-40 flex items-center justify-center relative ${project.color} bg-opacity-30 `}
-              style={{
-                backgroundImage: `url(${project.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute top-3 left-3 bg-revline-900 text-white px-3 py-1 rounded-lg text-xs">
-                {project.category}
-              </div>
-            </div>
-            <div className="p-6 space-y-2">
-              <h3 className="font-bold text-revline-900 text-xl">
-                {project.title}
-              </h3>
-              <p className="text-revline-400 text-sm line-clamp-2">
-                {project.description}
-              </p>
-              <div className="pt-2 flex justify-between items-center">
-                <div className="flex space-x-1">
-                  {project.features.slice(0, 1).map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-revline-100 text-revline-900 px-2 py-1 rounded-full"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <ArrowUpRight size={16} className="text-revline-900" />
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
       <Link
         href="/projects"
         className="flex items-center space-x-2 px-6 py-4 rounded-lg border border-revline-400 hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800"

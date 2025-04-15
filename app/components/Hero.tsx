@@ -43,7 +43,7 @@ const Hero = () => {
             <Component className="w-10 h-10 lg:w-16 lg:h-16 xl:w-18 xl:h-18 opacity-50" />
           </motion.div>
           <h1 className="text-7xl max-lg:text-5xl font-radley font-bold text-revline-900">
-            Future-Proof Web Solutions, Built for Growth.
+            Websites That Convert. Code That Performs.​
           </h1>
         </div>
         <div className="relative">
@@ -62,10 +62,8 @@ const Hero = () => {
             <CodeXml className="w-10 h-10 lg:w-16 lg:h-16 xl:w-18 xl:h-18 opacity-50" />
           </motion.div>
           <p className="text-revline-400 text-lg max-lg:text-base">
-            We craft high-performance websites engineered for results. Whether
-            you need a seamless eCommerce platform, a scalable SaaS app, or a
-            lightning-fast business website—Revline delivers cutting-edge
-            development with precision.
+            We build responsive landing pages and business sites with modern UI,
+            sharp code, and smooth UX — no bloat, no templates.
           </p>
         </div>
         <div className="flex items-center space-x-2">

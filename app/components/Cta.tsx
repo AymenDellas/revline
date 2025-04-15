@@ -16,7 +16,7 @@ const Cta = () => {
       </h1>
       <p className="w-[90%] lg:w-[70%]">
         Let's discuss how Revline can help you achieve your business goals with
-        a custom web solution designed for performance and growth.
+        a custom web solution.​
       </p>
       <Link
         href="/contact"
