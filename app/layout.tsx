@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins, Itim, Yatra_One, Radley } from "next/font/google";
-
+import { Poppins, Itim, Yatra_One, Radley, Anybody } from "next/font/google";
+import JsonLd from "./JsonLd";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // === Font Setup ===
+const anybody = Anybody({
+  weight : ["100", "200", "300","400", "500", "600", "700", "800", "900"],
+  subsets :["latin"],
+  variable : "--font-anybody",
+})
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -40,12 +45,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="use-credentials" />
+        <JsonLd />
+      </head>
       <body
         className={`
           ${poppins.variable} 
           ${radley.variable} 
           ${itim.variable} 
           ${yatraOne.variable} 
+          ${anybody.variable}
           font-poppins antialiased overflow-x-hidden relative
         `}
       >

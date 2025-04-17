@@ -102,6 +102,7 @@ const ProjectShowcase = () => {
             </div>
 
             <Link
+            target="_blank"
               href={activeProject.link}
               className="mt-auto flex items-center space-x-2 w-fit px-6 py-3 rounded-lg bg-revline-400 hover:bg-revline-300 transition-colors duration-300 ease-out text-revline-white-500"
             >
@@ -112,13 +113,7 @@ const ProjectShowcase = () => {
         </motion.div>
       </div>
 
-      <Link
-        href="/projects"
-        className="flex items-center space-x-2 px-6 py-4 rounded-lg border border-revline-400 hover:bg-revline-100 transition-colors duration-300 ease-out text-revline-black-800"
-      >
-        <span>Explore Our Capabilities</span>
-        <ArrowUpRight size={20} />
-      </Link>
+      
     </motion.section>
   );
 };
